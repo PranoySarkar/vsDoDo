@@ -3,7 +3,7 @@ Free, simple yet powerful graphical Todo Manager for VSCode
 
 vsDoDo helps you to plan your Task/Project/Feature and gives you a great visibility on your current progress which helps you to focus and prioritize on your tasks  
 
-![vsDoDo demo](https://github.com/prnysarker/vsDoDo/blob/master/assets/extra/demo.gif)
+![vsDoDo demo](https://github.com/prnysarker/vsDoDo/blob/master/assets/extra/demo.gif?raw=true)
 
 Features 
 1. Show progress
