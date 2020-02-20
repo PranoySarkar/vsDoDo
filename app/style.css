@@ -1,0 +1,219 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.playground {
+    background: #1e1e1e;
+    color: #d3d3d3;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 3fr 1fr;
+    overflow: hidden;
+}
+
+.list {
+    padding: 10px;
+    overflow: hidden;
+}
+
+.list.inProgress {
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+#completedOl {
+    height: 100%;
+    overflow: auto;
+}
+
+.completedOlContainer {
+    height: 100%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.list h2,
+.list h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.completedOlContainer {
+    display: none;
+}
+
+li {
+    padding: 5px 0px;
+    list-style: none;
+}
+.listWrapper {
+    display: flex;
+    align-items: center;
+}
+.status {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.statusPie {
+    display: none;
+    width: 40vh;
+    height: 40vh;
+    max-width: 240px;
+    max-height: 240px;
+    border: 1px solid #1e1e1e;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.statusIndicator {
+    width: 100%;
+    background: #444444;
+
+}
+
+#inCompletedStatus {
+    height: 115%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.inCompletedStatusBottom {
+    height: 100%;
+    background: #0099ff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#inProgressStatus {
+    height: 100%;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all .2s;
+}
+
+
+.controlPanel {
+    background: #444444;
+    width: 95%;
+    min-width: 370px;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 243px;
+    padding: 10px;
+}
+
+.controlPanel textarea {
+    display: block;
+    width: calc(100% - 25px);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.controlPanel label {
+    display: block;
+    margin-top: 10px;
+}
+
+.inlineGroups {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.controlPanel input {
+
+    padding: 6px 10px;
+    /* background: #fff; */
+    border: 3px solid #ffffff;
+    border-radius: 3px;
+    width: 85%;
+}
+
+.controlPanel button {
+    display: block;
+
+    width: 100px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #FFF;
+}
+
+.controlPanel button:active {
+    border: 1px solid transparent;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+.listButton {
+    border: 1px solid #2a0000;
+    background: #0099ff;
+    color: #efefef;
+    border-radius: 2px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 4px 7px;
+}
+
+.deleteButton {
+    border: 1px solid #2a0000;
+    background: #F44336;
+    color: #FFF;
+    border-radius: 2px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 4px 7px;
+}
+
+.settings {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.eachSettings {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+button#shuffleBtn {
+    width: 80px;
+    padding: 5px 5px;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#inProgressOl {
+    overflow: auto;
+    height: 100%;
+}
+#wave {
+    transform: scale(1);
+    margin-bottom: -3px;
+}
