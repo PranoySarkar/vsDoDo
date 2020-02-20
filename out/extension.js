@@ -46,17 +46,22 @@ function showPanel(context) {
         switch (message.command) {
             case 'export-data':
                 fs.writeFileSync(storagePath, message.data);
-                console.log(storagePath);
                 break;
             case 'sync-data':
-                let data = {
+                let data = JSON.stringify({
                     list: [],
                     startUp: true,
                     progressPie: true
-                };
-                if (fs.existsSync(storagePath)) {
-                    data = fs.readFileSync(storagePath).toString();
+                });
+                try {
+                    if (fs.existsSync(storagePath)) {
+                        let temp = fs.readFileSync(storagePath).toString();
+                        if (temp && temp.trim().length !== 0) {
+                            data = temp;
+                        }
+                    }
                 }
+                catch (e) { }
                 panel.webview.postMessage({
                     command: 'restore',
                     data

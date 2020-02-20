@@ -24,11 +24,11 @@ export function activate(context: vscode.ExtensionContext) {
 			})
 		);
 		if (fs.existsSync(storagePath)) {
-			try{
-				
+			try {
+
 				let data: any = fs.readFileSync(storagePath).toString();
 				data = JSON.parse(data);
-			
+
 				if (data.startUp === undefined || data.startUp === true) {
 					showPanel(context);
 				}
@@ -63,17 +63,22 @@ function showPanel(context: any) {
 		switch (message.command) {
 			case 'export-data':
 				fs.writeFileSync(storagePath, message.data);
-				console.log(storagePath);
 				break;
 			case 'sync-data':
-				let data:any =  {
+				let data: any = JSON.stringify({
 					list: [],
-					startUp:true,
-					progressPie:true
-				};
-				if(fs.existsSync(storagePath)){
-					data = fs.readFileSync(storagePath).toString();
+					startUp: true,
+					progressPie: true
+				});
+				try {
+					if (fs.existsSync(storagePath)) {
+						let temp = fs.readFileSync(storagePath).toString();
+						if (temp && temp.trim().length !== 0) {
+							data = temp;
+						}
+					}
 				}
+				catch (e) { }
 				
 				panel.webview.postMessage({
 					command: 'restore',
@@ -82,7 +87,7 @@ function showPanel(context: any) {
 				break;
 			case 'show-error':
 				vscode.window.showErrorMessage(message.error);
-				break;	
+				break;
 		}
 	});
 

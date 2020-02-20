@@ -62,7 +62,7 @@ function init() {
     });
 
     document.querySelector('#shuffleBtn').addEventListener('click', event => {
-      
+
         if (todoStore.list.length > 1) {
             let completedList = [];
             let inProgressList = [];
@@ -161,12 +161,12 @@ function updateView(updateData = true) {
     let docFragForCompleted = document.createDocumentFragment();
     let inProgress = 0;
     let completed = 0;
-    let inProgressCount =  completedCount =0;
+    let inProgressCount = completedCount = 0;
     todoStore.list.forEach((list, index) => {
 
-        let fontSize=list.difficulty+15;
-        if(fontSize>100){
-            fontSize=60;
+        let fontSize = list.difficulty + 15;
+        if (fontSize > 100) {
+            fontSize = 60;
         }
         if (!list.completed) {
             inProgressCount++;
@@ -206,8 +206,11 @@ function updateView(updateData = true) {
     if (isNaN(inProgressPercent) || inProgressPercent < 0) {
         inProgressPercent = 0;
     }
-    document.querySelector('#inProgressStatus').style.height = `${inProgressPercent}%`;
-    document.querySelector('#wave').style.transform = `scaleX(${Math.random()+1})`;
+    if(todoStore.list.length>0){
+        document.querySelector('#inProgressStatus').style.height = `${inProgressPercent}%`;
+        document.querySelector('#wave').style.transform = `scaleX(${Math.random() + 1})`;
+    }
+
     if (updateData) {
         persistData();
     }
