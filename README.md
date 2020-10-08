@@ -1,6 +1,8 @@
 # vsDoDo
 Free, simple yet powerful graphical Todo Manager for VSCode 
 
+![Install Now] (https://marketplace.visualstudio.com/items?itemName=PranoySarkar.vsdodo)
+
 vsDoDo helps you to plan your Task/Project/Feature and gives you a great visibility on your current progress which helps you to focus and prioritize on your tasks  
 
 ![vsDoDo demo](https://github.com/prnysarker/vsDoDo/blob/master/assets/extra/demo.gif?raw=true)
